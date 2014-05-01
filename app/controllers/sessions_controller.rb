@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
 	def index
 		if logged_in?
 			@user = User.find(session[:user_id])
-			render users_path
+			render user_patients_path(@user)
 		else
 			@user = User.new
 			render "index"
@@ -15,9 +15,9 @@ class SessionsController < ApplicationController
   	@user = User.find_by(email: user_params[:email])
   	if @user && @user.authenticate(user_params[:password])
   		session[:user_id] = @user.id
-  		render users_path
+  		redirect_to user_path(@user)
   	else
-  		redirect_to root_url
+  		render "index"
   	end
   end
 
