@@ -1,0 +1,16 @@
+
+
+<h1>Welcome to Xtreme Wounds Plus</h1>
+
+<hr>
+
+<h3>Login</h3>
+
+<%= form_for @user, url: sessions_url do |f| %>
+
+	<%= f.email_field :email, placeholder: "Email" %>
+	<%= f.password_field :password, placeholder: "Password" %>
+	<%= f.submit "Login" %>
+<% end %>
+
+<hr>
