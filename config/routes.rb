@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  root 'session#index'
+  root 'sessions#index'
 
-  get 'session/new' => 'session#new'
-  get 'session/create' => 'session#create'
-  get 'session/destroy' => 'session#destroy'
+  get 'sessions/new' => 'sessions#new'
+  get 'sessions/create' => 'sessions#create'
+  get 'sessions/destroy' => 'sessions#destroy'
 
   resources :users
   resources :patients
