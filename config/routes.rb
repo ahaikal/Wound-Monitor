@@ -7,10 +7,18 @@ Rails.application.routes.draw do
   # get 'sessions/destroy' => 'sessions#destroy'
 
   resources :sessions, only: [:new, :create, :destroy]
-  resources :users
-  resources :patients
-  resources :wounds
-  resources :statuses
+
+  resources :users do 
+    resources :patients
+  end
+  
+  resources :patients do
+    resources :wounds
+  end
+  resources :wounds do
+      resources :statuses
+  end
+
 
   post '/sessions/create', to: 'users#show'
   # post '/sessions/new', to: 'user#'
