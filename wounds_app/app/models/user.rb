@@ -1,8 +1,6 @@
-class User < ActiveRecord::Base
-  create_table :users do |t|
-    t.string :first_name
-    t.string :last_name
-    t.string :title
+include ApplicationHelper
 
-  end
+class User < ActiveRecord::Base
+  has_secure_password
+  has_many :patients
 end
