@@ -85,11 +85,3 @@ cm_rand = rand(31) + 1
     note: Faker::Lorem.paragraph
     )
 end
-
-# stages are 1 - 5
-#Drainage is a string
-# Odor is  a string
-
-
-
-
