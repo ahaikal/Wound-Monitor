@@ -1,6 +1,7 @@
 class CreateStatus < ActiveRecord::Migration
   def change
     create_table :statuses do |t|
+        t.integer :wound_id
         t.string :stage
         t.string :stage_description
         t.string :appearance

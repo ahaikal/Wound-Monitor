@@ -11,7 +11,7 @@ require 'faker'
 
 
 
-User.create(title: "Wound Nurse", first_name: "Steve", last_name: "Jobs", email: , password: ,password_confirmation:)
+User.create(title: "Wound Nurse", first_name: "Steve", last_name: "Jobs")
 User.create(title: "Wound Nurse", first_name: "Bill", last_name: "Gates")
 User.create(title: "Wound Nurse", first_name: "Larry", last_name: "Page")
 User.create(title: "Doctor", first_name: "Sheryl", last_name: "Sandberg")
@@ -19,11 +19,11 @@ User.create(title: "Doctor", first_name: "Meg", last_name: "Whitman")
 
 5.times do 
   User.create(
-    title: 'nurse'
+    title: 'nurse',
     first_name: Faker::Name.name,
     last_name: Faker::Name.name,
     email: Faker::Internet.email,  
-    password: 'password'
+    password: 'password',
     password_confirmation: 'password' 
     )
 end
@@ -56,32 +56,32 @@ Wound.create(patient_id: 1, location: "Lower back, near glutius Maximus")
 30.times do 
   Wound.create(
     patient_id: patient_ids.sample,
-    location: Faker::Lorem.words
+    location: Faker::Lorem.word
     )
 end
 
 wound_ids = Wound.all.map(&:id)
 
-Status.create( drainage: , odor: , color: , tunnel: , appearance: treatment_response:, treatment: , pain: , note: "Wound is looking gross." )
+
 rand_num = rand(6) + 1
 cm_rand = rand(31) + 1
 
 100.times do
   Status.create(
     wound_id: wound_ids.sample,
-    stage: rand_num
-    stage_description: Faker::Lorem.sentences
-    length: cm_rand
-    width: cm_rand
-    depth:cm_rand
-    drainage: Faker::Lorem.words
-    odor: Faker::Lorem.words
-    color: Faker::Commerce.color
-    tunnel: cm_rand
-    appearance: Faker::Lorem.sentence
-    treatment_response: Faker::Lorem.sentence
-    treatment: Faker::Lorem.sentence
-    pain: Faker::Lorem.sentence
+    stage: rand_num,
+    stage_description: Faker::Lorem.sentence,
+    length: cm_rand,
+    width: cm_rand,
+    depth:cm_rand,
+    drainage: Faker::Lorem.word,
+    odor: Faker::Lorem.word,
+    color: Faker::Commerce.color,
+    tunnel: cm_rand,
+    appearance: Faker::Lorem.sentence,
+    treatment_response: Faker::Lorem.sentence,
+    treatment: Faker::Lorem.sentence,
+    pain: Faker::Lorem.sentence,
     note: Faker::Lorem.paragraph
     )
 end

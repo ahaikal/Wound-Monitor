@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'session/create' => 'session#create'
   get 'session/destroy' => 'session#destroy'
 
+  resources :users
   resources :patients
   resources :wounds
   resources :statuses
