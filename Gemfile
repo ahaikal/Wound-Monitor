@@ -38,12 +38,10 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 group :production do
-    gem 'unicorn'
+	gem 'rails_12factor'
+  gem 'unicorn'
 end
 
-
-#Use rails12factor
-gem 'rails_12factor', group: :production
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
