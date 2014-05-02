@@ -1,8 +1,6 @@
-
-
 <h2> This muthafuckers name is <%= @user.first_name %></h2>
 
-<% @user.patients.each do |p| %>
-  <p><%= p.first_name %></p> 
+<% @user.patients.each do |patient| %>
+  <p><%= link_to "#{patient.name}", patient %></p> 
   
 <%end%>

@@ -1,0 +1,10 @@
+
+
+<h2><%= @patient.first_name %></h2>
+<h3>This patients wounds: </h3>
+
+<ul>
+  <% @patient.wounds.each do |wound| %>
+  <li> <%= link_to "#{wound.location}", wound %></li>
+  <% end %>
+</ul>
