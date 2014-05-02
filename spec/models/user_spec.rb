@@ -15,4 +15,11 @@ describe User do
     expect(user).to be_an_instance_of(User)
   end
 
+  it {should have_many(:patients)}
+  it {should have_db_column(:first_name)}
+  it {should have_db_column(:last_name)}
+  it {should have_db_column(:title)}
+  it {should have_db_column(:email)}
+  it {should have_db_column(:password_digest)}
+
 end
