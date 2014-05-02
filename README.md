@@ -1,10 +1,15 @@
+TRAVIS LINK
+===
+
+[Click here to see latest ran tests](https://travis-ci.org/WoundTeam/woundmonitor)
+
 PDF
 ===
 Check it out!
 
 SCHEMA
 ===
-[schema](http://i.imgur.com/8yBidNT.jpg)
+![schema](http://i.imgur.com/8yBidNT.jpg)
 
 XML
 ===
