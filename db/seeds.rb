@@ -20,8 +20,8 @@ User.create(title: "Doctor", first_name: "Meg", last_name: "Whitman")
 5.times do 
   User.create(
     title: 'nurse',
-    first_name: Faker::Name.name,
-    last_name: Faker::Name.name,
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
     email: Faker::Internet.email,  
     password: 'password',
     password_confirmation: 'password' 
@@ -38,8 +38,8 @@ user_ids = User.all.map(&:id)
 
 20.times do
   Patient.create( 
-      first_name: Faker::Name.name,
-      last_name: Faker::Name.name,
+      first_name: Faker::Name.first_name,
+      last_name: Faker::Name.last_name,
       user_id: user_ids.sample 
       )
 end
