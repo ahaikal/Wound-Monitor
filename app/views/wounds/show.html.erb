@@ -1,0 +1,5 @@
+<h2>Status for this wound: </h2>
+<% @wound.statuses.each do |status| %>
+<p><%= link_to status.created_at, wound_statuses_path(status.id) %></p>
+
+<% end %>
