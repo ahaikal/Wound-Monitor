@@ -1,7 +1,7 @@
 require "spec_helper"
 
 describe Status do
-  # it { should belong_to(:wound) }
+  it { should belong_to(:wound) }
   it { should have_db_column(:width) }
   it { should have_db_column(:stage) }
   it { should have_db_column(:stage_description) }
