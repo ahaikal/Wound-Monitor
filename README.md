@@ -1,3 +1,8 @@
+TEST COVERAGE
+===
+[![Coverage Status](https://coveralls.io/repos/WoundTeam/woundmonitor/badge.png)](https://coveralls.io/r/WoundTeam/woundmonitor)
+
+
 TRAVIS LINK
 ===
 
