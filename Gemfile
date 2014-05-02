@@ -37,7 +37,9 @@ gem 'coveralls', require: false
 gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-gem 'unicorn'
+group :production do
+    gem 'unicorn'
+end
 
 
 #Use rails12factor
