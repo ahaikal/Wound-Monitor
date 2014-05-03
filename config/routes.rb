@@ -15,14 +15,17 @@ Rails.application.routes.draw do
   resources :patients do
     resources :wounds
   end
+
   resources :wounds do
     resources :statuses
   end
+  
   resources :statuses
 
 
-  post '/sessions/create', to: 'users#show'
+  # post '/sessions/create', to: 'users#show'
   post '/statuses/:id', to: 'statuses#destroy'
+  get '/sessions/:id', to: 'sessions#destroy'
   # post 'wounds/:id/statuses/new', to: 'statuses#new'
   # post '/sessions/new', to: 'user#'
 
