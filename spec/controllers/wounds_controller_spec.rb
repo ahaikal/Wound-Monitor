@@ -25,7 +25,7 @@ describe WoundsController do
 
 	describe "POST #create" do
 		context "permits location & patient id" do
-			it { should permit(:location, :patient_id).for(:wound)}
+			it { should permit(:location, :patient_id).for(:create)}
 		end
 	end
 
