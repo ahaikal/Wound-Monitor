@@ -1,10 +1,12 @@
 FactoryGirl.define do
   factory :wound do
+    id 1
     location "Head"
     patient_id 1
   end
 
   factory :status do
+    id 1
   	wound_id 1
     stage "II"
     stage_description "draining has started"
