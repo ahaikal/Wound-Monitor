@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe UsersController do
 
-	describe "POST #show" do
+	describe "GET #show" do
 		
 		before :each do
 			@user = FactoryGirl.create(:user, :id => 1)
