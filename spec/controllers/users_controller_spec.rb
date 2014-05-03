@@ -2,11 +2,11 @@ require 'spec_helper'
 
 describe UsersController do
 
-	describe "GET #show" do
+	describe "POST #show" do
 		
 		before :each do
 			@user = FactoryGirl.create(:user, :id => 1)
-			get :show, {}, { :user_id => 1 }
+			get :show, {:id => 1}, { :user_id => 1 }
 		end
 
 		it "renders the show template" do
