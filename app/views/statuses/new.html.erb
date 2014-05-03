@@ -1,7 +1,8 @@
 <h1>Create New Status</h1>
 
+<div class='container'>
 <%= form_for @status do |status| %>
-    <%= field_set_tag 'Wound Status Information' do %>
+    <%= field_set_tag  do %>
       <%= field_set_tag 'Wound Information' do %>
           <%= hidden_field_tag "stuff_id", params[:wound_id] %>
           <br>
@@ -40,3 +41,5 @@
         <%= status.submit %>
     <% end %>
 <% end %>
+</div>
+

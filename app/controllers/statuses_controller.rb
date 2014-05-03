@@ -1,4 +1,4 @@
-class StatusesController < ActionController::Base
+class StatusesController < ApplicationController
 
   def new
     @wound = Wound.find(params[:wound_id])

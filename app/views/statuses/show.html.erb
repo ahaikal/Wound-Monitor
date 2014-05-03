@@ -1,3 +1,8 @@
+<br><br>
+<%= link_to "Wounds for this patient", @status.wound.patient %>
+<br><br>
+<%= link_to "Statuses for this wound", @status.wound %>
+
 <h1> Time status was recorded: <%= @status.updated_at.strftime("%B %e, %Y at %l:%M%p") %></h1>
 
 <h3>Stage: </h3><%= @status.stage %>

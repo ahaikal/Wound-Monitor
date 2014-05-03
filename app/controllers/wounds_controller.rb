@@ -1,7 +1,4 @@
 class WoundsController < ApplicationController
-	def index
-		@wounds = Wound.find(params[:wound_id])
-	end
 
 	def show
 		@wound = Wound.find(params[:id])
@@ -18,10 +15,6 @@ class WoundsController < ApplicationController
 		else
 			render "new"
 		end
-	end
-
-	def edit
-
 	end
 
 	def destroy
