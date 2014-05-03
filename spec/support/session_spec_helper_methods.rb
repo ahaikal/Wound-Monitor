@@ -1,6 +1,7 @@
 module SessionTestHelper   
   def login(user)
-    user = User.where(:email => user.email).first if user.is_a?(Symbol)
+    return true if User.where(:email => user.email).first 
+    return false
     #request.session[:user] = user.id
   end
 

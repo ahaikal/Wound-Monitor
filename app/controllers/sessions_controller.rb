@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 			@user = User.find(session[:user_id])
 			redirect_to user_path(@user)
 		else
-                  @user = User.new
+      @user = User.new
 			render "index"
 		end
 	end
