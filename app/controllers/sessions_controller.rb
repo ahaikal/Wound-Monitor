@@ -1,15 +1,15 @@
 class SessionsController < ApplicationController
 
-	def index
-		if logged_in?
-			@user = User.find(session[:user_id])
-			redirect_to user_path(@user)
-		else
-      @user = User.new
-			render "index"
-		end
-	end
+    def index
 
+     if logged_in?
+      @user = User.find(session[:user_id])
+      redirect_to user_path(@user)
+    else
+      @user = User.new
+      render "index"
+  	end
+  end
 
   def create
   	@user = User.find_by(email: user_params[:email])

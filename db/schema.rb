@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20140501005518) do
     t.integer  "tunnel"
     t.boolean  "pain"
     t.text     "note"
+    t.boolean  "active",             default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end

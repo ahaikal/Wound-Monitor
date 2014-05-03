@@ -1,0 +1,7 @@
+
+<h2>Enter Wound Information</h2>
+  <%= form_for @wound do |f| %>
+  Wound Location: <%= f.text_field :location %>
+  <%= hidden_field_tag "patient_id", params[:format] %>
+  <%= f.submit "Record Wound Location" %>
+<% end %>

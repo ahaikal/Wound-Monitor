@@ -17,6 +17,7 @@ class CreateStatus < ActiveRecord::Migration
         t.integer :tunnel
         t.boolean :pain
         t.text :note
+        t.boolean :active, default: true
 
         t.timestamps
     end

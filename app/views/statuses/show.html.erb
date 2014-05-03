@@ -1,0 +1,25 @@
+<h1> Time status was recorded: <%= @status.updated_at.strftime("%B %e, %Y at %l:%M%p") %></h1>
+
+<h3>Stage: </h3><%= @status.stage %>
+<br>
+<h3>StageDescription: </h3><%= @status.stage_description %>
+<br>
+<%= @status.appearance %>
+<br>
+<%= @status.drainage %>
+<br>
+<%= @status.odor %>
+<br>
+<%= @status.color %>
+<br>
+<%= @status.treatment %>
+<br>
+<%= @status.treatment_response %>
+<br>
+Length: <%= @status.length %>Width: <%= @status.width %>
+<br>
+<%= @status.depth %>
+<%= @status.tunnel %>
+<%= @status.pain %>
+<%= @status.note %>
+<%= @status.image_url %>
