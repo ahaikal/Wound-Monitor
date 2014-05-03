@@ -1,19 +1,20 @@
+<br><br>
+<%= link_to "Record New Status", new_wound_status_path(@wound.id, :patient_id => @wound.patient) %><br><br>
+<%= link_to "Wounds", @wound.patient %>
+<br><br>
 <h2>Statuses for this wound: </h2>
 <% @wound.statuses.each do |status| %>
   <% if status.active == true %>
     <p>
       Entered on: <%= link_to status.created_at.strftime("%B %e, %Y at %l:%M%p"), status_path(status.id) %>
-        <%= button_to "Mark as InActive", status_path(status), method: :destroy %> | 
-      <%= link_to "Update" %>
+        <%= button_to "Mark as InActive", status_path(status), method: :destroy %>  
     </p>
     <% else %>
       <p>
       Entered on: <%= link_to status.created_at.strftime("%B %e, %Y at %l:%M%p"), status_path(status.id) %>
-        <button>InActive</button> | 
-      <%= link_to "Update" %>
+        <button>InActive</button>  
     </p>
     <% end %>
 <br>
 <% end %>
 <br>
-<%= link_to "Record New Status", new_wound_status_path(@wound.id, :patient_id => @wound.patient) %>

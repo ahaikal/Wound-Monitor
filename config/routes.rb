@@ -2,9 +2,6 @@ Rails.application.routes.draw do
 
   root 'sessions#index'
 
-  # get 'sessions/new' => 'sessions#new'
-  # get 'sessions/create' => 'sessions#create'
-  # get 'sessions/destroy' => 'sessions#destroy'
 
   resources :sessions, only: [:new, :create, :destroy]
 
@@ -23,9 +20,10 @@ Rails.application.routes.draw do
   resources :statuses
 
 
-  # post '/sessions/create', to: 'users#show'
+ 
   post '/statuses/:id', to: 'statuses#destroy'
   get '/sessions/:id', to: 'sessions#destroy'
+  
   # post 'wounds/:id/statuses/new', to: 'statuses#new'
   # post '/sessions/new', to: 'user#'
 
