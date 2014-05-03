@@ -5,6 +5,7 @@ describe UsersController do
 	describe "GET #show" do
 		
 		before :each do
+			@user = FactoryGirl.create(:user, :id => 1)
 			get :show, {}, { :user_id => 1 }
 		end
 

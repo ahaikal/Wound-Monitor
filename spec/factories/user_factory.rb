@@ -5,5 +5,10 @@ FactoryGirl.define do
     sequence (:email) {|n| "email#{n}@nightnurses.com"}
     password "password"
   end
-#
+
+  factory :patient do
+  	first_name "Donna"
+  	last_name "Trenton"
+  end
+
 end
