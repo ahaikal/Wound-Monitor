@@ -1,0 +1,42 @@
+<h1>Create New Status</h1>
+
+<%= form_for @status do |status| %>
+    <%= field_set_tag 'Wound Status Information' do %>
+      <%= field_set_tag 'Wound Information' do %>
+          <%= hidden_field_tag "stuff_id", params[:wound_id] %>
+          <br>
+          Wound Stage : <%= status.text_field :stage %>
+          <br>
+          Stage Description : <%= status.text_area :stage_description %>
+      <% end %>
+        <br>
+        <%= field_set_tag 'Wound Dimensions' do %>
+          Length : <%= status.number_field :length %>
+          Width : <%= status.number_field :width %>
+          Odor : <%= status.text_field :odor %>
+          color : <%= status.color_field :color %>
+        <% end %>
+        <br>
+        <%= field_set_tag 'Wound Properties' do %>
+        Drainage : <%= status.text_field :drainage %>
+        Appearance : <%= status.text_field :appearance %>
+        <% end %>
+        <br>
+        <%= field_set_tag 'Treatment Information' do %>
+          Treatment : <%= status.text_field :treatment %>
+          Treatment Response : <%= status.text_field :treatment_response %>
+          Tunnel : <%= status.text_field :tunnel %>
+          Pain? : <%= status.text_field :pain %>
+        <% end %>
+        <br>
+        <%= field_set_tag 'Image' do %>
+        IMAGE!!! : <%= status.text_field :image_url %>
+        <% end %>
+        <br>
+        <%= field_set_tag 'Extra Notes' do %>
+          Notes : <%= status.text_area :note %>
+        <% end %>
+        <br>
+        <%= status.submit %>
+    <% end %>
+<% end %>

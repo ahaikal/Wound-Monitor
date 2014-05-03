@@ -1,6 +1,6 @@
 class WoundsController < ApplicationController
 	def index
-		@wounds = Patient.wounds
+		@wounds = Wound.find(params[:wound_id])
 	end
 
 	def show
@@ -12,7 +12,12 @@ class WoundsController < ApplicationController
 	end
 
 	def create
-		@wound = Wound.create(wound_params)
+		@wound = Wound.new(wound_params.merge(patient_id: params[:patient_id]))
+		if @wound.save!
+			redirect_to @wound
+		else
+			render "new"
+		end
 	end
 
 	def edit
@@ -22,13 +27,11 @@ class WoundsController < ApplicationController
 	def destroy
 		@wound = Wound.find(params[:id])
 		@wound.destroy
-
 	end
 
 	private
 
 	def wound_params
-		params.require(:wound).permit :location, :patient
-
+		params.require(:wound).permit :location, :patient_id
 	end
 end

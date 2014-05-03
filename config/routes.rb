@@ -16,11 +16,14 @@ Rails.application.routes.draw do
     resources :wounds
   end
   resources :wounds do
-      resources :statuses
+    resources :statuses
   end
+  resources :statuses
 
 
   post '/sessions/create', to: 'users#show'
+  post '/statuses/:id', to: 'statuses#destroy'
+  # post 'wounds/:id/statuses/new', to: 'statuses#new'
   # post '/sessions/new', to: 'user#'
 
   # The priority is based upon order of creation: first created -> highest priority.
