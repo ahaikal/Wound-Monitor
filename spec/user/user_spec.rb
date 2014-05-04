@@ -3,7 +3,7 @@ require "spec_helper"
 describe User do
   it { should have_secure_password }
   it "should have a first name and second name" do
-    user = User.create!(first_name: "Andy", last_name: "Lindeman", email: "andy@lindeman.com", password: "12345A")
+    user = User.create!(first_name: "Andy", last_name: "Lindeman", email: "andy@lindeman.com", password: "1234567A")
 
     expect(user.first_name).to eq("Andy")
     expect(user.last_name).to eq("Lindeman")
@@ -11,7 +11,7 @@ describe User do
   end
 
   it "should be of type User" do
-    user = User.create!(first_name: "Andy", last_name: "Lindeman", email: "andy@lindeman.com", password: "12345A")
+    user = User.create!(first_name: "Andy", last_name: "Lindeman", email: "andy@lindeman.com", password: "1234567A")
     expect(user).to be_an_instance_of(User)
   end
 
