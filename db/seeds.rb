@@ -11,11 +11,11 @@ require 'faker'
 
 
 
-User.create(title: "Wound Nurse", first_name: "Steve", last_name: "Jobs")
-User.create(title: "Wound Nurse", first_name: "Bill", last_name: "Gates")
-User.create(title: "Wound Nurse", first_name: "Larry", last_name: "Page")
-User.create(title: "Doctor", first_name: "Sheryl", last_name: "Sandberg")
-User.create(title: "Doctor", first_name: "Meg", last_name: "Whitman")
+User.create(title: "Wound Nurse", first_name: "Steve", last_name: "Jobs", email: "steveyj@pear.com", password: 'password', password_confirmation: 'password')
+User.create(title: "Wound Nurse", first_name: "Bill", last_name: "Gates", email: "biggitybill@msoft.com", password: 'password', password_confirmation: 'password')
+User.create(title: "Wound Nurse", first_name: "Larry", last_name: "Page", email: "ilovedata@doodle.com", password: 'password', password_confirmation: 'password')
+User.create(title: "Doctor", first_name: "Sheryl", last_name: "Sandberg", email: "leanin@facewall.com", password: 'password', password_confirmation: 'password')
+User.create(title: "Doctor", first_name: "Meg", last_name: "Whitman", email: "ceilingbreaker@hpandme.com", password: 'password', password_confirmation: 'password')
 
 5.times do 
   User.create(
@@ -28,19 +28,23 @@ User.create(title: "Doctor", first_name: "Meg", last_name: "Whitman")
     )
 end
 
-Patient.create(first_name: "John", last_name: "Doe" , user_id: 1 )
-Patient.create(first_name: "Samantha", last_name: "Toes", user_id: 2 )
-Patient.create(first_name: "George", last_name: "Washington", user_id: 3)
-Patient.create(first_name: "Danielle", last_name: "Dangerous", user_id: 2)
-Patient.create(first_name: "Jarrod", last_name: "Scott", user_id: 1)
+Patient.create(first_name: "John", last_name: "Doe" , user_id: 1, sex: "Other", room_number: 1 )
+Patient.create(first_name: "Samantha", last_name: "Toes", user_id: 2, sex: "Female", room_number: 2 )
+Patient.create(first_name: "George", last_name: "Washington", user_id: 3, sex: "Male", room_number: 3)
+Patient.create(first_name: "Danielle", last_name: "Dangerous", user_id: 2, sex: "Female", room_number: 4)
+Patient.create(first_name: "Jarrod", last_name: "Scott", user_id: 1, sex: "Male", room_number: 5)
 
 user_ids = User.all.map(&:id)
+sex_noun = ["Male", "Female", "Other"]
+room_number = rand(100) + 1
 
 20.times do
   Patient.create( 
       first_name: Faker::Name.first_name,
       last_name: Faker::Name.last_name,
-      user_id: user_ids.sample 
+      user_id: user_ids.sample, 
+      sex: sex_noun.sample,
+      room_number: room_number,
       )
 end
 
