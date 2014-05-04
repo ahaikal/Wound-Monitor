@@ -11,6 +11,10 @@ class StatusesController < ApplicationController
 
   def show
     @status = Status.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.json { render json: @status }
+    end
   end
 
   def destroy
@@ -22,11 +26,14 @@ class StatusesController < ApplicationController
   end
 
   def create
-    @status = Status.create(status_params.merge(wound_id: params[:stuff_id]))
-    if @status.save
-      redirect_to Wound.find(params[:stuff_id])
+    if request.xhr?
     else
-      render "new"
+      @status = Status.create(status_params.merge(wound_id: params[:stuff_id]))
+      if @status.save
+        redirect_to Wound.find(params[:stuff_id])
+      else
+        render "new"
+      end
     end
   end
 
