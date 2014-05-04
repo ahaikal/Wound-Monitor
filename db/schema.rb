@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20140501005518) do
   create_table "patients", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "sex"
+    t.integer  "room_number"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
