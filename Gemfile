@@ -55,3 +55,4 @@ group :development, :test do
   gem 'capybara', require: false
   gem "factory_girl_rails", "~> 4.0", require: false
 end
+
