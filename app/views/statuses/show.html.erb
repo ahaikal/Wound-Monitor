@@ -5,26 +5,32 @@
 
 <h1> Time status was recorded: <%= @status.updated_at.strftime("%B %e, %Y at %l:%M%p") %></h1>
 
-<h3>Stage: </h3><%= @status.stage %>
+<h4>Stage: </h4><%= @status.stage %>
 <br>
-<h3>StageDescription: </h3><%= @status.stage_description %>
+<h4>StageDescription: </h4><%= @status.stage_description %>
 <br>
-<%= @status.appearance %>
+<h4>Appearance: </h4><%= @status.appearance %>
 <br>
-<%= @status.drainage %>
+<h4>Drainage: </h4><%= @status.drainage %>
 <br>
-<%= @status.odor %>
+<h4>Odor: </h4><%= @status.odor %>
 <br>
-<%= @status.color %>
+<h4>Color: </h4><%= @status.color %>
 <br>
-<%= @status.treatment %>
+<h4>Treatment: </h4><%= @status.treatment %>
 <br>
-<%= @status.treatment_response %>
+<h4>Treatment Response: </h4><%= @status.treatment_response %>
 <br>
-Length: <%= @status.length %>Width: <%= @status.width %>
+<h4>Length: </h4><%= @status.length %>
 <br>
-<%= @status.depth %>
-<%= @status.tunnel %>
-<%= @status.pain %>
-<%= @status.note %>
-<%= @status.image_url %>
+<h4>Width: </h4><%= @status.width %>
+<br>
+<h4>depth: </h4><%= @status.depth %>
+<br>
+<h4>Tunnel: </h4><%= @status.tunnel %>
+<br>
+<h4>Pain: </h4><%= @status.pain %>
+<br>
+<h4>Note: </h4><%= @status.note %>
+<br>
+<h4>Picture: </h4><%= @status.image_url %>
