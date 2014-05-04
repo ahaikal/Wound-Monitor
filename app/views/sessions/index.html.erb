@@ -1,14 +1,20 @@
-<h1>Welcome to Xtreme Wounds Plus</h1>
 
-<hr>
+	<div class="row-fluid wa-ctr-text">
+		<h1>Welcome to Wound Assist+</h1>
 
-<h3>Login</h3>
+		<hr>
 
-<%= form_for @user, url: sessions_path do |f| %>
+		<h3>Staff Login</h3>
 
-	<%= f.email_field :email, placeholder: "Email" %>
-	<%= f.password_field :password, placeholder: "Password" %>
-	<%= f.submit "Login" %>
-<% end %>
+		<%= form_for @user, url: sessions_path do |f| %>
 
-<hr>
+			<%= f.email_field :email, placeholder: "Email" %><br />
+			<%= f.password_field :password, placeholder: "Password" %><br />
+			<%= f.submit :class => "btn btn-hg btn-primary" %>
+		<% end %>
+
+
+		<hr>
+	</div>
+
+

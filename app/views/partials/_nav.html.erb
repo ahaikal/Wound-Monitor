@@ -1,9 +1,19 @@
 
 
-<h1><%= link_to "Home", root_path %></h1>
-
-<% if current_user %>
-<%= link_to "Logout", session_path(session[:user_id]) %>
-<%else%>
-
-<%end%>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+      <span class="sr-only">Toggle navigation</span>
+    </button>
+    <a class="navbar-brand wa-nav-brand" href="#">Wound Assist+</a>
+  </div>
+  <div class="collapse navbar-collapse" id="navbar-collapse-01">
+          
+    <form class="navbar-form navbar-right" action="#">
+   		<% if current_user %>
+				<%= menu_item "Logout", session_path(session[:user_id]) %>
+			<% else %>
+			<% end %>
+    </form>
+  </div><!-- /.navbar-collapse -->
+</nav><!-- /navbar -->
