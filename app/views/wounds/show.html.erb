@@ -1,20 +1,43 @@
-<br><br>
-<%= link_to "Record New Status", new_wound_status_path(@wound.id, :patient_id => @wound.patient) %><br><br>
-<%= link_to "Wounds", @wound.patient %>
-<br><br>
-<h2>Statuses for this wound: </h2>
-<% @wound.statuses.each do |status| %>
-  <% if status.active == true %>
-    <p>
-      Entered on: <%= link_to status.created_at.strftime("%B %e, %Y at %l:%M%p"), status_path(status.id) %>
-        <%= button_to "Mark as InActive", status_path(status), method: :destroy %>  
-    </p>
-    <% else %>
-      <p>
-      Entered on: <%= link_to status.created_at.strftime("%B %e, %Y at %l:%M%p"), status_path(status.id) %>
-        <button>InActive</button>  
-    </p>
-    <% end %>
-<br>
-<% end %>
-<br>
+<%= link_to "View all wounds", @wound.patient %> | <%= link_to "Record New Status", new_wound_status_path(@wound.id, :patient_id => @wound.patient) %>
+
+<hr>
+
+
+<h2>Wound Statuses: </h2>
+
+<table class="table table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Time</th> 
+      <th>Stage</th>
+      <th>Description</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wound.statuses.each do |status| %>
+
+      <tr>
+        <td><%= status.id %></td>
+        <td><%= link_to status.created_at.strftime("%B %e, %Y at %l:%M%p"), status_path(status.id) %></td>
+        <td><%= status.stage %></td>
+        <td><%= status.stage_description %></td>
+
+        <td>
+        <% if status.active %>
+          <%= button_to "Mark as Inactive", status_path(status), method: :destroy, :class => 'btn btn-small btn-primary' %>
+        <% else %>
+          <%= button_to "Inactive", status.created_at.strftime("%B %e, %Y at %l:%M%p"), status_path(status.id), :class => 'btn btn-small disabled' %>
+          <button class="btn btn-small disabled" type="button">Inactive</button> 
+            
+         <% end %>
+         </td> 
+      </tr>
+     <% end %>
+  </tbody>
+
+
+
+

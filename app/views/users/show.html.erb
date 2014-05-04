@@ -1,12 +1,12 @@
 
-<h2> Welcome back <%= @user.first_name %></h2>
+<h2> Welcome back, <%= @user.first_name %>!</h2>
 
 <h3>Here are your current patients:</h3>
 
 <table class="table table-hover table-bordered">
 	<thead>
 		<tr>
-			<th>#</th> <th>Patient Name</th> <th>Room Number</th>
+			<th>#</th> <th>Patient Name</th><th>Age</th><th>Sex</th> <th>Room Number</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -14,6 +14,8 @@
 	<tr>
 	<td><%= patient.id %></td>
   <td><%= link_to "#{patient.name}", patient %></td>
+  <td>35</td>
+  <td>N/A</td>
   <td>-</td>
   </tr>
 <%end%>
