@@ -14,4 +14,14 @@
 	  <%= f.submit "Record Wound Location", :class => 'btn btn-small btn-primary' %>
 	</div>
 </div>
+
+	<% if @wound.errors.any? %>
+		<div class="alert alert-warning">
+			<ul>
+				<% @wound.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
 <% end %>
