@@ -1,45 +1,111 @@
 <h1>Create New Status</h1>
 
-<div class='container'>
-<%= form_for @status do |status| %>
-    <%= field_set_tag  do %>
+<div class="row">
+<%= form_for @status, :class => 'form-horizontal' do |status| %>
+
+    <%= field_set_tag do %>
+    
+      <div class="span6">
       <%= field_set_tag 'Wound Information' do %>
+
           <%= hidden_field_tag "stuff_id", params[:wound_id] %>
-          <br>
-          Wound Stage : <%= status.text_field :stage %>
-          <br>
-          Stage Description : <%= status.text_area :stage_description %>
+
+          <div class="form-group">
+          <%= label_tag :stage, "Wound Stage:", :class => "col-sm-2 control-label" %>
+          <%= status.text_field :stage, :class => 'form-control' %>
+          </div>
+
+          <div class="form-group">
+          <%= label_tag :stage_description, "Stage Description:", :class => "col-sm-2 control-label" %>
+          <%= status.text_area :stage_description, :class => 'form-control' %>
+          </div>
       <% end %>
-        <br>
-        <%= field_set_tag 'Wound Dimensions' do %>
-          Length : <%= status.number_field :length %>
-          Width : <%= status.number_field :width %>
-          Odor : <%= status.text_field :odor %>
-          color : <%= status.color_field :color %>
-        <% end %>
-        <br>
-        <%= field_set_tag 'Wound Properties' do %>
-        Drainage : <%= status.text_field :drainage %>
-        Appearance : <%= status.text_field :appearance %>
-        <% end %>
-        <br>
-        <%= field_set_tag 'Treatment Information' do %>
-          Treatment : <%= status.text_field :treatment %>
-          Treatment Response : <%= status.text_field :treatment_response %>
-          Tunnel : <%= status.text_field :tunnel %>
-          Pain? : <%= status.text_field :pain %>
-        <% end %>
-        <br>
-        <%= field_set_tag 'Image' do %>
-        IMAGE!!! : <%= status.text_field :image_url %>
-        <% end %>
-        <br>
-        <%= field_set_tag 'Extra Notes' do %>
-          Notes : <%= status.text_area :note %>
-        <% end %>
-        <br>
-        <%= status.submit %>
+      </div>
+
+      <div class="span6">
+      <%= field_set_tag 'Wound Dimensions' do %>
+          <div class="form-group">
+            <%= label_tag :length, "Length:", :class => "col-sm-2 control-label"%> 
+            <%= status.number_field :length, :class => 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :width, "Width:",  :class => "col-sm-2 control-label"%> 
+            <%= status.number_field :width, :class => 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :odor, "Odor:",   :class => "col-sm-2 control-label"%>
+            <%= status.text_field :odor, :class => 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :color, "Color:",  :class => "col-sm-2 control-label"%> 
+            <%= status.color_field :color, :class => 'form-control' %>
+          </div>
+      <% end %>
+      </div>
+    
+
+    
+      <div class="span6">
+      <%= field_set_tag 'Wound Properties' do %>
+        <div class="form-group">
+          <%= label_tag :drainage, "Drainage:", :class => "col-sm-2 control-label"%>
+          <%= status.text_field :drainage, :class => 'form-control', :class => 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= label_tag :appearance, "Appearance:", :class => "col-sm-2 control-label"%>
+          <%= status.text_field :appearance, :class => 'form-control', :class => 'form-control' %>
+        </div>
+      <% end %>
+      </div>  
+
+      <div class="span6">
+      <%= field_set_tag 'Treatment Information' do %>
+          <div class="form-group">
+            <%= label_tag :treatment, "Treatment:", :class => "col-sm-2 control-label" %> 
+            <%= status.text_field :treatment, :class => 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :treatment_response, "Treatment Response:", :class => "col-sm-2 control-label" %>
+            <%= status.text_field :treatment_response, :class => 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :tunnel, "Tunnel:", :class => "col-sm-2 control-label" %>
+            <%= status.text_field :tunnel, :class => 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :pain, "Pain?:", :class => "col-sm-2 control-label" %>
+            <%= status.text_field :pain, :class => 'form-control' %>
+          </div>
+      <% end %>
+      </div>
+
+      <div class="span6">
+      <%= field_set_tag 'Image' do %>
+
+        <div class="form-group">
+          <%= label_tag :sym, "Upload:", :class => "col-sm-2 control-label" %> 
+          <%= status.text_field :image_url, :class => 'form-control' %>
+        </div>
+      <% end %>
+      </div>
+
+      <div class="span6">
+      <%= field_set_tag 'Extra Notes' do %>
+        <div class="form-group">
+          <%= label_tag :note, "Notes:", :class => "col-sm-2 control-label" %> 
+          <%= status.text_area :note, :class => 'form-control' %>
+        </div>
+      <% end %>
+      </div>
+    
+      <div class="span12">
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <%= status.submit nil, :class => 'btn btn-small btn-primary' %>
+          </div>
+        </div>
+      </div>
     <% end %>
 <% end %>
-</div>
+
 
