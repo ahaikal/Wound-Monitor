@@ -1,0 +1,9 @@
+//= require js/jquery-ui-1.10.3.custom.min.js
+//= require js/jquery.ui.touch-punch.min.js
+//= require js/bootstrap.min.js
+//= require js/bootstrap-select.js
+//= require js/bootstrap-switch.js
+//= require js/flatui-checkbox.js
+//= require js/flatui-radio.js
+//= require js/jquery.tagsinput.js
+//= require js/jquery.placeholder.js
