@@ -10,7 +10,7 @@ class WoundsController < ApplicationController
 
 	def create
 		@wound = Wound.new(wound_params.merge(patient_id: params[:patient_id]))
-		if @wound.save!
+		if @wound.save
 			redirect_to @wound
 		else
 			render "new"
