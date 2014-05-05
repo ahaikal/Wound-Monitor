@@ -2,6 +2,7 @@ class WoundsController < ApplicationController
 
 	def show
 		@wound = Wound.find(params[:id])
+		@statuses = @wound.statuses
 		respond_to do |format|
       format.html
       format.json { render json: @wound.statuses }
