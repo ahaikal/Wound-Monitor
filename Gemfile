@@ -43,6 +43,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Bootstrap
 gem "twitter-bootstrap-rails"
 
+gem 'groupdate'
+
+gem "chartkick"
 
 # Use unicorn as the app server
 group :production do
