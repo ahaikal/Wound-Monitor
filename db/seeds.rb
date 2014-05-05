@@ -36,7 +36,6 @@ Patient.create(first_name: "Jarrod", last_name: "Scott", user_id: 1, sex: "Male"
 
 user_ids = User.all.map(&:id)
 sex_noun = ["Male", "Female", "Other"]
-room_number = rand(100) + 1
 
 20.times do
   Patient.create( 
@@ -44,8 +43,8 @@ room_number = rand(100) + 1
       last_name: Faker::Name.last_name,
       user_id: user_ids.sample, 
       sex: sex_noun.sample,
-      room_number: room_number,
-      age: room_number
+      room_number: rand(100) + 1,
+      age: rand(100) + 1
       )
 end
 
