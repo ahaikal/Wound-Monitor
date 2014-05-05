@@ -2,7 +2,9 @@ class Status < ActiveRecord::Base
   belongs_to :wound
   belongs_to :patient
   
-  has_attached_file :image, style: {
+  has_attached_file :image, 
+  	:bucket => ENV['AWS_BUCKET'],
+  	:style => {
   	thumb: '150x150>',
   	medium: '300x300>'
   }
