@@ -10,9 +10,7 @@ class Status < ActiveRecord::Base
       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     },
-  	:style => {
-  		thumb: '150x150>',
-  		medium: '300x300>'},
+  	:style => { :thumb => '150x150#', :medium => '300x300>'},
   	:path => "app/public/system/images/:id/:style/:basename.:extension"
 
 
