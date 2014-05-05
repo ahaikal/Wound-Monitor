@@ -44,7 +44,7 @@ class StatusesController < ApplicationController
       :stage, :stage_description, :appearance, 
       :drainage, :odor, :color, :treatment_response, 
       :treatment, :image_url, :length, :width, :depth, 
-      :tunnel, :pain, :note)
+      :tunnel, :pain, :note, :image)
   end
 
 end
