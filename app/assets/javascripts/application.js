@@ -13,6 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require_tree ../../../vendor/assets/flatui/.
 //= require turbolinks
 //= require_tree .
-//= require_tree ../../../vendor/assets/flatui/.

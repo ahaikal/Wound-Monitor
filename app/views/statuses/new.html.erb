@@ -83,8 +83,8 @@
       <%= field_set_tag 'Image' do %>
 
         <div class="form-group">
-          <%= label_tag :sym, "Upload:", :class => "col-sm-2 control-label" %> 
-          <%= status.text_field :image_url, :class => 'form-control' %>
+          <%= label_tag :image, "Upload:", :class => "col-sm-2 control-label" %> 
+          <%= status.file_field :image, :class => 'form-control' %>
         </div>
       <% end %>
       </div>

@@ -10,7 +10,6 @@ class CreateStatus < ActiveRecord::Migration
         t.string :color
         t.string :treatment_response
         t.string :treatment
-        t.string :image_url
         t.integer :length
         t.integer :width
         t.integer :depth
