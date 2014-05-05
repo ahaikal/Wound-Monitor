@@ -1,4 +1,6 @@
 class Status < ActiveRecord::Base
+	attr_accessible :image_file_name
+
   belongs_to :wound
   belongs_to :patient
   
