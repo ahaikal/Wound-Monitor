@@ -15,7 +15,10 @@ class SessionsController < ApplicationController
   	@user = User.find_by(email: user_params[:email])
   	if @user && @user.authenticate(user_params[:password])
   		session[:user_id] = @user.id
-  		redirect_to user_path(@user)
+      respond_to do |format|
+        format.html {redirect_to user_path(@user)}
+        format.json {render json: @user.patients}
+      end
   	else
   		render "index"
   	end

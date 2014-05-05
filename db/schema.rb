@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140501005518) do
     t.string   "sex"
     t.integer  "room_number"
     t.integer  "user_id"
+    t.integer  "age"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
