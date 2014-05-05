@@ -14,9 +14,9 @@
 	<tr>
 	<td><%= patient.id %></td>
   <td><%= link_to "#{patient.name}", patient %></td>
-  <td>35</td>
-  <td>N/A</td>
-  <td>-</td>
+  <td><%= patient.age %></td>
+  <td><%= patient.sex %></td>
+  <td><%= patient.room_number %></td>
   </tr>
 <%end%>
 	</tbody>

@@ -28,11 +28,11 @@ User.create(title: "Doctor", first_name: "Meg", last_name: "Whitman", email: "ce
     )
 end
 
-Patient.create(first_name: "John", last_name: "Doe" , user_id: 1, sex: "Other", room_number: 1 )
-Patient.create(first_name: "Samantha", last_name: "Toes", user_id: 2, sex: "Female", room_number: 2 )
-Patient.create(first_name: "George", last_name: "Washington", user_id: 3, sex: "Male", room_number: 3)
-Patient.create(first_name: "Danielle", last_name: "Dangerous", user_id: 2, sex: "Female", room_number: 4)
-Patient.create(first_name: "Jarrod", last_name: "Scott", user_id: 1, sex: "Male", room_number: 5)
+Patient.create(first_name: "John", last_name: "Doe" , user_id: 1, sex: "Other", room_number: 1, age: 35 )
+Patient.create(first_name: "Samantha", last_name: "Toes", user_id: 2, sex: "Female", room_number: 2, age: 42 )
+Patient.create(first_name: "George", last_name: "Washington", user_id: 3, sex: "Male", room_number: 3, age: 282)
+Patient.create(first_name: "Danielle", last_name: "Dangerous", user_id: 2, sex: "Female", room_number: 4, age: 67)
+Patient.create(first_name: "Jarrod", last_name: "Scott", user_id: 1, sex: "Male", room_number: 5, age: 98)
 
 user_ids = User.all.map(&:id)
 sex_noun = ["Male", "Female", "Other"]
@@ -45,13 +45,15 @@ room_number = rand(100) + 1
       user_id: user_ids.sample, 
       sex: sex_noun.sample,
       room_number: room_number,
+      age: room_number
       )
 end
 
 patient_ids = Patient.all.map(&:id)
 
 Wound.create(patient_id: 1, location: "Knee" )
-Wound.create(patient_id: 2, location: "Shoulder")
+Wound.create(patient_id: 1, location: "Shoulder")
+Wound.create(patient_id: 2, location: "Upper Thigh")
 Wound.create(patient_id: 3, location: "Upper Thigh")
 Wound.create(patient_id: 4, location: "Calf")
 Wound.create(patient_id: 5, location: "Right side of stomach area")
@@ -69,6 +71,26 @@ wound_ids = Wound.all.map(&:id)
 
 rand_num = rand(6) + 1
 cm_rand = rand(31) + 1
+
+20.times do
+  Status.create(
+      wound_id: 2,
+      stage: rand_num,
+      stage_description: Faker::Lorem.sentence,
+      length: cm_rand,
+      width: cm_rand,
+      depth:cm_rand,
+      drainage: Faker::Lorem.word,
+      odor: Faker::Lorem.word,
+      color: Faker::Commerce.color,
+      tunnel: cm_rand,
+      appearance: Faker::Lorem.sentence,
+      treatment_response: Faker::Lorem.sentence,
+      treatment: Faker::Lorem.sentence,
+      pain: Faker::Lorem.sentence,
+      note: Faker::Lorem.paragraph
+      )
+end
 
 100.times do
   Status.create(
