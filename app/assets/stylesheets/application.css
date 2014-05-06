@@ -11,11 +11,8 @@
  * file per style scope.
  *
  *= require bootstrap_and_overrides
- *= require_tree .
  *= require_self
+ *= require sessions
+ *= require_tree .
  */
 
-
-.btn-primary {
-	background-color: #48c9b0;
-}

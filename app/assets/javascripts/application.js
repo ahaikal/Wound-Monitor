@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require chartkick
 //= require twitter/bootstrap
 //= require flatjs
 //= require turbolinks
