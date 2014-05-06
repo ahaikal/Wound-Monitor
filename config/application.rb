@@ -12,6 +12,7 @@ module WoundsApp
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts','lato')
     config.assets.paths << Rails.root.join('app', 'assets', 'images')
     
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
