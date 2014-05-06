@@ -1,7 +1,7 @@
 /*
 
 *=require twitter-bootstrap-static/bootstrap
-*=require_tree ../../../vendor/assets/flatui/css/.
+*=require flat-ui
 
   Use Font Awesome icons (default)
   To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
@@ -21,3 +21,11 @@
 @fontAwesomeSvgPath: asset-url("fontawesome-webfont.svg#fontawesomeregular");
 @import "fontawesome/font-awesome";
 
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: font-url('glyphicons-halflings-regular.eot');
+  src: font-url('glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+  font-url('glyphicons-halflings-regular.woff') format('woff'),
+  font-url('glyphicons-halflings-regular.ttf') format('truetype'),
+  font-url('glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
