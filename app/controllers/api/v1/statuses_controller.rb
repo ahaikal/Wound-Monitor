@@ -2,6 +2,8 @@ module Api
   module V1
     class StatusesController < ApplicationController
 
+      skip_before_action :verify_authenticity_token
+
       respond_to :json
 
       def new
@@ -18,8 +20,15 @@ module Api
         @status = Status.find(params[:id])
       end
 
-      def create    
-          Status.create!
+      def create
+        @patient = Patient.find(params[:patient_id])
+      # @status = @patient.wondscreate(wound_id: params[:wound_id],satage: params[:stage])
+      @wound = @patient.wounds.find(params[:wound_id])
+      @status = @wound.statuses.create(stage: params[:stage])
+      @statuses = @wound.statuses.all
+      render :json => {:status => @statuses.map(&:stage_description)}
+      Rails.logger.info @statuses
+      
       end
 
       private
