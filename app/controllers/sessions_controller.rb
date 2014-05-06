@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     else
       @user = User.new
       render "index"
-  	end
+    end
   end
 
   def create
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
         format.json {render json: @user.patients}
       end
   	else
-  		render "index"
+            redirect_to root_url
   	end
   end
 
