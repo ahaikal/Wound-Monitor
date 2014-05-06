@@ -47,6 +47,7 @@ gem 'groupdate'
 
 gem "chartkick"
 
+
 # Use unicorn as the app server
 group :production do
 	gem 'rails_12factor'
