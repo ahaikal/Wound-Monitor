@@ -1,7 +1,6 @@
 module Api
   module V1
     class SessionsController < ApplicationController
-      
     
     respond_to :json
 

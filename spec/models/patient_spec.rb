@@ -14,9 +14,13 @@ describe Patient do
     expect(user).to be_an_instance_of(Patient)
   end
 
-  it {should belong_to(:user)}
-  it {should have_many(:wounds)}
-  it {should have_db_column(:first_name)}
-  it {should have_db_column(:last_name)}
+  it {should belong_to(:user) }
+  it {should have_many(:wounds) }
+  it {should have_db_column(:first_name) }
+  it {should have_db_column(:last_name) }
+  it {should have_db_column(:sex) }
+  it {should have_db_column(:room_number) }
+  it {should have_db_column(:user_id) }
+  it {should have_db_column(:age)}
 
 end

@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe "session/new.html.erb" do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe "session/index.html.erb" do
+  
 end
