@@ -16,7 +16,6 @@ FactoryGirl.define do
     color "bluish-gold"
     treatment_response "none"
     treatment "heat"
-    image_url "http://digitaldeconstruction.com/wp-content/uploads/2013/01/kitten.jpg"
     length 6
     width 5
     tunnel "big"
