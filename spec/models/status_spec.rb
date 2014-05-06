@@ -5,6 +5,7 @@ describe Status do
   it { should have_db_column(:width) }
   it { should have_db_column(:stage) }
   it { should have_db_column(:stage_description) }
+  it { should have_db_column(:appearance) }
   it { should have_db_column(:drainage) }
   it { should have_db_column(:odor) }
   it { should have_db_column(:color) }
@@ -15,5 +16,6 @@ describe Status do
   it { should have_db_column(:tunnel) }
   it { should have_db_column(:pain) }
   it { should have_db_column(:note) }
+  it { should have_db_column(:active) }
 
 end
