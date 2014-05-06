@@ -34,7 +34,7 @@ describe StatusesController do
 		pending context "permits all status columns" do
 			it { should permit(:wound_id, :stage, :stage_description, :appearance, 
 				:drainage, :odor, :color, :treatment_response, 
-				:treatment, :image_url, :length, :width, :depth, 
+				:treatment, :image, :image_file_name, :length, :width, :depth, 
 				:tunnel, :pain, :note).for(:create) }
 		end
 	end
