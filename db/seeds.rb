@@ -28,14 +28,18 @@ User.create(title: "Doctor", first_name: "Meg", last_name: "Whitman", email: "ce
     )
 end
 
-Patient.create(first_name: "John", last_name: "Doe" , user_id: 1, sex: "Other", room_number: 1, age: 35 )
-Patient.create(first_name: "Samantha", last_name: "Toes", user_id: 2, sex: "Female", room_number: 2, age: 42 )
-Patient.create(first_name: "George", last_name: "Washington", user_id: 3, sex: "Male", room_number: 3, age: 282)
-Patient.create(first_name: "Danielle", last_name: "Dangerous", user_id: 2, sex: "Female", room_number: 4, age: 67)
-Patient.create(first_name: "Jarrod", last_name: "Scott", user_id: 1, sex: "Male", room_number: 5, age: 98)
+Patient.create(first_name: "John", last_name: "Doe" , user_id: 1, sex: "Other", room_number: 1, birthdate: 25.years.ago )
+Patient.create(first_name: "Samantha", last_name: "Toes", user_id: 2, sex: "Female", room_number: 2, birthdate: 35.years.ago )
+Patient.create(first_name: "George", last_name: "Washington", user_id: 3, sex: "Male", room_number: 3, birthdate: 85.years.ago)
+Patient.create(first_name: "Danielle", last_name: "Dangerous", user_id: 2, sex: "Female", room_number: 4, birthdate: 62.years.ago)
+Patient.create(first_name: "Jarrod", last_name: "Scott", user_id: 1, sex: "Male", room_number: 5, birthdate: 57.years.ago)
 
 user_ids = User.all.map(&:id)
 sex_noun = ["Male", "Female", "Other"]
+
+def age(birthdate)
+  (DateTime.now.year - birthdate.year)
+end
 
 20.times do
   Patient.create( 
@@ -44,8 +48,16 @@ sex_noun = ["Male", "Female", "Other"]
       user_id: user_ids.sample, 
       sex: sex_noun.sample,
       room_number: rand(100) + 1,
-      age: rand(100) + 1
+      birthdate: (10..50).to_a.sample.years.ago,
+      age: nil
       )
+end
+
+patties = Patient.all
+
+patties.each do |p|
+  p.age = age(p.birthdate)
+  p.save
 end
 
 patient_ids = Patient.all.map(&:id)
@@ -110,3 +122,7 @@ end
     note: Faker::Lorem.paragraph
     )
 end
+
+
+
+
