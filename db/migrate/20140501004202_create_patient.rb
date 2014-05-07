@@ -6,6 +6,7 @@ class CreatePatient < ActiveRecord::Migration
       t.string  :sex
       t.integer :room_number
       t.belongs_to :user
+      t.datetime :birthdate
       t.integer :age
 
     	t.timestamps
