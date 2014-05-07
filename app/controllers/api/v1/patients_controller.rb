@@ -5,7 +5,8 @@ module Api
       respond_to :json
 
       def show
-        respond_with @patient = Patient.find(params[:id])
+        @patient = Patient.find(params[:id])
+        render :json => {:status => @patient.wounds}
       end
 
       def index
