@@ -25,7 +25,6 @@ class StatusesController < ApplicationController
   end
 
   def destroy
-    p params
     @status = Status.find(params[:id])
     @status.active = false
     @status.save!
@@ -47,10 +46,10 @@ class StatusesController < ApplicationController
   private
 
   def status_params
-    params.require(:status).permit(:wound_id, 
-      :stage, :stage_description, :appearance, 
-      :drainage, :odor, :color, :treatment_response, 
-      :treatment, :image_url, :length, :width, :depth, 
+    params.require(:status).permit(:wound_id,
+      :stage, :stage_description, :appearance,
+      :drainage, :odor, :color, :treatment_response,
+      :treatment, :image_url, :length, :width, :depth,
       :tunnel, :pain, :note, :image, :image_file_name)
   end
 
