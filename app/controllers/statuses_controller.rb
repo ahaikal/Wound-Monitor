@@ -11,10 +11,17 @@ class StatusesController < ApplicationController
 
   def show
     @status = Status.find(params[:id])
+    @wound_export = view_context.generate_hl7(@status)
     respond_to do |format|
       format.html
       format.json { render json: @status }
     end
+  end
+
+  def download
+    @status = Status.find(params[:id])
+    @wound_export = view_context.generate_hl7(@status)
+    send_data @wound_export.join("\n"), :filename => "wound_export.txt"
   end
 
   def destroy
