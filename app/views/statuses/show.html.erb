@@ -73,12 +73,10 @@
 <h4>HL7 Export <small><a href="#">(download)</a></small></h4> 
 
 <div class="panel panel-default">
-	<div class="well">
-	<% @wound_export.each do |segment| %>
-		<% unless segment.is_a? Enumerable %>
-		<small><%= segment %></small><br />
-		<% end %>
-	<% end %>
-	</div>
+  <div class="well">
+  <% @wound_export.each do |segment| %>
+    <small><%= segment %></small><br />
+  <% end %>
+  </div>
 </div>
 
