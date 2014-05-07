@@ -26,8 +26,9 @@ module Api
       @wound = @patient.wounds.find(params[:wound_id])
       @status = @wound.statuses.create(stage: params[:stage])
       @statuses = @wound.statuses.all
-      render :json => {:status => @statuses.map(&:stage_description)}
-      Rails.logger.info @statuses
+      # render :json => {:status => @statuses.map(&:stage_description)}
+      render :json => {:status => @status.wound_id}
+      Rails.logger.info @status.wound_id
       
       end
 
