@@ -1,16 +1,14 @@
-<%= link_to "View all patients", @patient.user %> | <%= link_to "Record New Wound", new_wound_path(@patient) %>
-
+<%= link_to "Home", root_path %> - <%= link_to "View all patients", @patient.user %> - <%= link_to "Record New Wound", new_wound_path(@patient) %>
 <hr>
 
-<h2>Patient Name: <%= @patient.first_name %> <%= @patient.last_name %></h2>
+<h3>Patient Name: <%= @patient.name %></h3>
 
-
-<h3>Wounds:</h3>
+<h4>Wounds:</h4>
 
 <table class="table table-hover table-bordered">
 	<thead>
 		<tr>
-		<th>#</th> <th>Wound</th> <th>Description</th>
+		<th>Wound No.</th> <th>Wound</th> <th>Description</th>
 		</tr>
 	</thead>
 
@@ -27,5 +25,3 @@
 	</tbody>
 
 </table>
-
-
