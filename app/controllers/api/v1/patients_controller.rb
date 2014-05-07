@@ -6,11 +6,18 @@ module Api
 
       def show
         @patient = Patient.find(params[:id])
-        render :json => {:status => @patient.wounds}
+        @wounds = @patient.wounds
+        @woundlocation = @wounds.map(&:location)
+        @woundid = @wounds.map(&:id)
+        response = { :woundlocation=>  @woundlocation, :ids => @woundid}
+        render :json => response
       end
 
       def index
-        respond_with Patient.all
+        #will return all patients for a user
+        @user = User.find(params[:id])
+         @patient = @user.patients
+         render :json => {:status => @patient}
       end
     end
   end

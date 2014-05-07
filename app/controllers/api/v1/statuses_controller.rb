@@ -21,13 +21,13 @@ module Api
       end
 
       def create
-        @patient = Patient.find(params[:patient_id])
-      # @status = @patient.wondscreate(wound_id: params[:wound_id],satage: params[:stage])
+      @patient = Patient.find(params[:patient_id])
+      
       @wound = @patient.wounds.find(params[:wound_id])
-      @status = @wound.statuses.create(stage: params[:stage])
-      @statuses = @wound.statuses.all
-      # render :json => {:status => @statuses.map(&:stage_description)}
-      render :json => {:status => @status.wound_id}
+      @status = @wound.statuses.create!(status_params)
+      # @statuses = @wound.statuses.all
+      
+      render :json => {:status => true}
       Rails.logger.info @status.wound_id
       
       end
@@ -38,7 +38,7 @@ module Api
         params.require(:status).permit(:wound_id, 
           :stage, :stage_description, :appearance, 
           :drainage, :odor, :color, :treatment_response, 
-          :treatment, :image_url, :length, :width, :depth, 
+          :treatment, :length, :width, :depth, 
           :tunnel, :pain, :note, :image, :image_file_name)
       end
     end
