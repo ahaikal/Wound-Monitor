@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   end
   
   resources :statuses
+  get "statuses/:id/download" => "statuses#download", as: :statuses_download
 
 
  

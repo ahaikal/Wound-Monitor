@@ -70,7 +70,9 @@
 
 <hr>
 
-<h4>HL7 Export <small><a href="#">(download)</a></small></h4> 
+<h4>HL7 Export <small>
+  <%= link_to "Download", statuses_download_path(@status) %>
+</small></h4>
 
 <div class="panel panel-default">
   <div class="well">

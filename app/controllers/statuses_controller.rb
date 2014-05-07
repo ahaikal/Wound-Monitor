@@ -18,6 +18,12 @@ class StatusesController < ApplicationController
     end
   end
 
+  def download
+    @status = Status.find(params[:id])
+    @wound_export = view_context.generate_hl7(@status)
+    send_data @wound_export.join("\n"), :filename => "wound_export.txt"
+  end
+
   def destroy
     p params
     @status = Status.find(params[:id])
