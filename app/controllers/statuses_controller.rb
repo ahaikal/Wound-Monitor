@@ -28,9 +28,9 @@ class StatusesController < ApplicationController
   def create
     if request.xhr?
     else
-      @status = Status.create(status_params.merge(wound_id: params[:stuff_id]))
+      @status = Status.create(status_params.merge(wound_id: params[:wound_id]))
       if @status.save
-        redirect_to Wound.find(params[:stuff_id])
+        redirect_to Wound.find(params[:wound_id])
       else
         render "new"
       end
