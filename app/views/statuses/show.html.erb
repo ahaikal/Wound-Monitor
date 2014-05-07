@@ -1,5 +1,6 @@
 
-<%= link_to "Wounds for this patient", @status.wound.patient %> | <%= link_to "Statuses for this wound", @status.wound %>
+<%= link_to "Wounds for this patient", @status.wound.patient %> | <%= link_to "Statuses for this wound", @status.wound %> | 
+
 
 <hr>
 
@@ -8,6 +9,8 @@
 
 <h4>Image:</h4>
 <%= image_tag @status.image.url(:original), width: '150', height: '150', class: 'img-thumbnail' %>
+
+<hr>
 
 <table class="table table-striped table-bordered table-hover">
 	<thead>
@@ -65,5 +68,17 @@
 
 </table>
 
+<hr>
 
+<h4>HL7 Export <small><a href="#">(download)</a></small></h4> 
+
+<div class="panel panel-default">
+	<div class="well">
+	<% @wound_export.each do |segment| %>
+		<% unless segment.is_a? Enumerable %>
+		<small><%= segment %></small><br />
+		<% end %>
+	<% end %>
+	</div>
+</div>
 

@@ -11,6 +11,7 @@ class StatusesController < ApplicationController
 
   def show
     @status = Status.find(params[:id])
+    @wound_export = view_context.generate_hl7(@status)
     respond_to do |format|
       format.html
       format.json { render json: @status }
