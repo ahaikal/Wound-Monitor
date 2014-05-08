@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20140505154015) do
     t.boolean  "pain"
     t.text     "note"
     t.boolean  "active",             default: true
+    t.datetime "observation_date"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"

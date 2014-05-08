@@ -12,7 +12,7 @@
   <thead>
     <tr>
       <th>Status No.</th>
-      <th>Time</th> 
+      <th>Observation Date</th> 
       <th>Stage</th>
       <th>Description</th>
       <th>Status</th>
@@ -24,7 +24,7 @@
 
       <tr>
         <td><%= status.id %></td>
-        <td><%= link_to status.created_at.strftime("%B %e, %Y at %l:%M%p"), status_path(status.id) %></td>
+        <td><%= link_to status.observation_date.strftime("%B %e, %Y at %l:%M%p"), status_path(status.id) %></td>
         <td><%= status.stage %></td>
         <td><%= status.stage_description %></td>
 
