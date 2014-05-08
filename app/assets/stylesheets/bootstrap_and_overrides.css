@@ -8,20 +8,16 @@
   To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
   =require twitter-bootstrap-static/fontawesome
   */
-
-
 .field_with_errors {
   @extend .has-error;
 }
-
-// Font Awesome
+/*Font Awesome*/
 @fontAwesomeEotPath: asset-url("fontawesome-webfont.eot");
 @fontAwesomeEotPath_iefix: asset-url("fontawesome-webfont.eot?#iefix");
 @fontAwesomeWoffPath: asset-url("fontawesome-webfont.woff");
 @fontAwesomeTtfPath: asset-url("fontawesome-webfont.ttf");
 @fontAwesomeSvgPath: asset-url("fontawesome-webfont.svg#fontawesomeregular");
 @import "fontawesome/font-awesome";
-
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: font-url('glyphicons-halflings-regular.eot');
@@ -30,5 +26,3 @@
   font-url('glyphicons-halflings-regular.ttf') format('truetype'),
   font-url('glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
 }
-
-
