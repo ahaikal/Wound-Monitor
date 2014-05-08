@@ -1,25 +1,28 @@
+<h4>Hi, <%= @user.name %></h4>
+<p>Welcome to the Wound Management System! Below is a list of your patients, their wounds and statuses.</p>
+<!-- <p></p> -->
+<hr>
 
-<h4> Current User: <%= @user.name %></h4>
 
 <h5>Current patients:</h5>
 
 <table class="table table-hover table-bordered">
-	<thead>
-		<tr>
-			<th>Patient No.</th> <th>Patient Name</th><th>Age</th><th>Sex</th> <th>Room Number</th>
-		</tr>
-	</thead>
-	<tbody>
+<thead>
+<tr>
+<th>Patient No.</th> <th>Patient Name</th><th>Age</th><th>Sex</th> <th>Room Number</th>
+</tr>
+</thead>
+<tbody>
 <% @user.patients.each do |patient| %>
-	<tr>
-	<td><%= patient.id %></td>
-  <td><%= link_to "#{patient.name}", patient %></td>
-  <td><%= patient.age %></td>
-  <td><%= patient.sex %></td>
-  <td><%= patient.room_number %></td>
-  </tr>
+<tr>
+<td><%= patient.id %></td>
+<td><%= link_to "#{patient.name}", patient %></td>
+<td><%= patient.age %></td>
+<td><%= patient.sex %></td>
+<td><%= patient.room_number %></td>
+</tr>
 <%end%>
-	</tbody>
+</tbody>
 </table>
 
 
