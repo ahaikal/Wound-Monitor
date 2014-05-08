@@ -1,6 +1,9 @@
 <%= link_to "Home", root_path %> - <%= link_to "Back To Statuses", wound_path(params[:wound_id]) %> 
 
-<h1>Create New Status</h1>
+<h2>Create New Status</h2>
+
+<p>Patient: <%= @wound.patient.name %></p>
+<p>Wound location: <%= @wound.location %></p>
 
 <div class="row">
 <%= form_for @status, :class => 'form-horizontal' do |status| %>
