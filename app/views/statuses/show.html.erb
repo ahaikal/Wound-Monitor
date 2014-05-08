@@ -1,7 +1,7 @@
 <%= link_to "Home", root_path %> - <%= link_to "Wounds for this patient", @status.wound.patient %> - <%= link_to "Statuses for this wound", @status.wound %>
 <hr>
 
-<h3>Status: <%= @status.updated_at.strftime("%B %e, %Y at %l:%M%p") %></h3>
+<h4>Status: <%= @status.updated_at.strftime("%B %e, %Y at %l:%M%p") %></h4>
 <p>Description: <%= @status.note %></p>
 
 <h6>Image:</h6>

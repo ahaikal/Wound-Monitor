@@ -1,33 +1,33 @@
+<div class="row-fluid wa-ctr-text">
+	<h1>Welcome to Wound Assist+</h1>
+	<hr>
+	<h3>Staff Login</h3>
+	<%= form_for @user, url: sessions_path do |f| %>
+	<%= f.email_field :email, placeholder: "Email", class: "input-with-feedback" %>
+	<br />
+	<%= f.password_field :password, placeholder: "Password", class: "input-with-feedback" %>
+	<br />
+	<%= f.submit "Login", :class => "btn btn-hg btn-primary" %>
+	<% end %>
 
-	<div class="row-fluid wa-ctr-text">
-		<h1>Welcome to Wound Assist+</h1>
+	<% if @user.errors.any? %>
+	<div class="alert alert-warning">
 
-		<hr>
+		<h3>
+			<%= pluralize(@user.errors.count, "error") %> prohibited this post from being saved.
+		</h3>
 
-		<h3>Staff Login</h3>
+		<ul>
+			<% @user.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
 
-		
-		<%= form_for @user, url: sessions_path do |f| %>
-
-
-			<%= f.email_field :email, placeholder: "Email", class: "input-with-feedback" %><br />
-			<%= f.password_field :password, placeholder: "Password", class: "input-with-feedback" %><br />
-			<%= f.submit "Login", :class => "btn btn-hg btn-primary" %>
-		<% end %>
-		
-		<% if @user.errors.any? %>
-			<div class="alert alert-warning">
-				<h3><%= pluralize(@user.errors.count, "error") %> prohibited this post from being saved.</h3>
-				<ul>
-					<% @user.errors.full_messages.each do |msg| %>
-						<li><%= msg %></li>
-					<% end %>
-				</ul>
-			</div>
-		<% end %>
-
-
-		<hr>
 	</div>
+	<% end %>
+
+	<hr>
+
+</div>
 
 
