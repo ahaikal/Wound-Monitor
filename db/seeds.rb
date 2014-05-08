@@ -63,7 +63,7 @@ end
 patient_ids = Patient.all.map(&:id)
 
 Wound.create(patient_id: 1, location: "Knee" )
-Wound.create(patient_id: 1, location: "Shoulder")
+Wound.create(patient_id: 2, location: "Shoulder")
 Wound.create(patient_id: 2, location: "Upper Thigh")
 Wound.create(patient_id: 3, location: "Upper Thigh")
 Wound.create(patient_id: 4, location: "Calf")
@@ -83,29 +83,126 @@ wound_ids = Wound.all.map(&:id)
 rand_num = rand(6) + 1
 cm_rand = rand(31) + 1
 
-20.times do
-  Status.create(
+
+Status.create(
       wound_id: 2,
-      stage: rand_num,
-      stage_description: Faker::Lorem.sentence,
-      length: cm_rand,
-      width: cm_rand,
-      depth:cm_rand,
-      drainage: Faker::Lorem.word,
-      odor: Faker::Lorem.word,
-      color: Faker::Commerce.color,
-      tunnel: cm_rand,
-      appearance: Faker::Lorem.sentence,
-      treatment_response: Faker::Lorem.sentence,
-      treatment: Faker::Lorem.sentence,
-      pain: Faker::Lorem.sentence,
-      note: Faker::Lorem.paragraph
+      stage: 1,
+      stage_description: "Non-blanchable erythema",
+      length: 5,
+      width: 3,
+      depth:2,
+      drainage: "none",
+      odor: "yes",
+      color: "Yellow",
+      tunnel: 0,
+      appearance: "Blanchable erythema or blue/purple and black discoloration",
+      treatment_response: "Making Progress",
+      treatment: "Turning every 2 hours. User pressure relieving/reducing mattresses according to Patient Risk Assessment Protocol.",
+      pain: false,
+      note: "The wound is getting better overall. It has lost the previous odor.",
+      observation_date: 5.days.ago
       )
-end
+
+Status.create(
+      wound_id: 2,
+      stage: 2,
+      stage_description: "Partial thickness",
+      length: 8,
+      width: 6,
+      depth: 4,
+      drainage: "Pus present",
+      odor: "yes",
+      color: "Yellow and tones of brown",
+      tunnel: 2,
+      appearance: "Blanchable erythema or blue/purple and black discoloration",
+      treatment_response: "not progressing or regressing",
+      treatment: "Do not drag patient. Use correct manual handling techniques and appropriate equipment.",
+      pain: true,
+      note: "The wound is not showing signs of improving. It has started emitting an odor.",
+      observation_date: 4.days.ago
+      )
+
+Status.create(
+      wound_id: 2,
+      stage: 3,
+      stage_description: "Full thickness skin loss",
+      length: 10,
+      width: 8,
+      depth: 5,
+      drainage: "Copius amounts of pus and other fluids.",
+      odor: "yes",
+      color: "brown and hints of necrosus.",
+      tunnel: 5,
+      appearance: "Blanchable erythema or blue/purple and black discoloration",
+      treatment_response: "Going down in a hurry.",
+      treatment: "Turning every 2 hours. User pressure relieving/reducing mattresses according to Patient Risk Assessment Protocol. Also using hydrocolloid, foam and film.",
+      pain: true,
+      note: "The wound is regressing. It has developed a significant odor. It smells a lot like almonds.",
+      observation_date: 3.days.ago
+      )
+
+Status.create(
+      wound_id: 2,
+      stage: 4,
+      stage_description: "Full thickness tissue loss",
+      length: 5,
+      width: 3,
+      depth:2,
+      drainage: "Pus and several other fluids coming out in ",
+      odor: "yes",
+      color: "Black and solid signs of necrotic sections.",
+      tunnel: 0,
+      appearance: "Blanchable erythema or blue/purple and black discoloration",
+      treatment_response: "Making Progress",
+      treatment: "Turning every 2 hours. User pressure relieving/reducing mattresses according to Patient Risk Assessment Protocol.",
+      pain: true,
+      note: "The wound is getting better overall. It has lost the previous odor.",
+      observation_date: 2.days.ago
+      )
+
+Status.create(
+      wound_id: 2,
+      stage: 3,
+      stage_description: "Full thickness skin loss",
+      length: 2,
+      width: 1,
+      depth:1,
+      drainage: "none",
+      odor: "no",
+      color: "Yellow",
+      tunnel: 0,
+      appearance: "Blanchable erythema or blue/purple and black discoloration",
+      treatment_response: "Making Progress",
+      treatment: "Turning every 2 hours. User pressure relieving/reducing mattresses according to Patient Risk Assessment Protocol.",
+      pain: false,
+      note: "The wound is getting better overall. It has lost the previous odor.",
+      observation_date: 1.days.ago
+      )
+
+# 20.times do
+#   Status.create(
+#       wound_id: 2,
+#       stage: rand_num,
+#       stage_description: Faker::Lorem.sentence,
+#       length: cm_rand,
+#       width: cm_rand,
+#       depth:cm_rand,
+#       drainage: Faker::Lorem.word,
+#       odor: Faker::Lorem.word,
+#       color: Faker::Commerce.color,
+#       tunnel: cm_rand,
+#       appearance: Faker::Lorem.sentence,
+#       treatment_response: Faker::Lorem.sentence,
+#       treatment: Faker::Lorem.sentence,
+#       pain: Faker::Lorem.sentence,
+#       note: Faker::Lorem.paragraph,
+#       observation_date: (1..50).to_a.sample.days.ago
+#       )
+# end
 
 100.times do
   Status.create(
-    wound_id: wound_ids.sample,
+    wound_id: (3..31).to_a.sample,
     stage: rand_num,
     stage_description: Faker::Lorem.sentence,
     length: cm_rand,
@@ -119,7 +216,8 @@ end
     treatment_response: Faker::Lorem.sentence,
     treatment: Faker::Lorem.sentence,
     pain: Faker::Lorem.sentence,
-    note: Faker::Lorem.paragraph
+    note: Faker::Lorem.paragraph,
+    observation_date: (1..50).to_a.sample.days.ago
     )
 end
 

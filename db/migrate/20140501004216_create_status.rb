@@ -17,6 +17,7 @@ class CreateStatus < ActiveRecord::Migration
         t.boolean :pain
         t.text :note
         t.boolean :active, default: true
+        t.datetime :observation_date
 
         t.timestamps
     end
