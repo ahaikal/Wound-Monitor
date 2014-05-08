@@ -24,7 +24,8 @@ module Api
       @patient = Patient.find(params[:patient_id])
       
       @wound = @patient.wounds.find(params[:wound_id])
-      @status = @wound.statuses.create!(status_params)
+      @status = @wound.statuses.create!(status_params.merge(observation_date: Time.now))
+      # Status.create(status_params.merge(observation_date: Time.now))
       # @statuses = @wound.statuses.all
       
       render :json => {:status => true}
@@ -39,7 +40,7 @@ module Api
           :stage, :stage_description, :appearance, 
           :drainage, :odor, :color, :treatment_response, 
           :treatment, :length, :width, :depth, 
-          :tunnel, :pain, :note, :image, :image_file_name)
+          :tunnel, :pain, :note, :image, :image_file_name,:observation_date)
       end
     end
   end
