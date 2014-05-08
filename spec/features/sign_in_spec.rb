@@ -12,7 +12,7 @@ feature "Signing in" do
       fill_in 'user[password]', :with => @user.password
     end
     click_button 'Login'
-    expect(page).to have_content 'Welcome back'
+    expect(page).to have_content "Welcome to the Wound Management System!"
   end
 
   given(:other_user) { User.create!(:email => 'other@example.com', :password => '1234rous') }

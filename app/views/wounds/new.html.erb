@@ -3,7 +3,7 @@
 
 <div  class="row-fluid wa-ctr-text">
 
-<h4>Patient: <%= User.find(params[:format].to_i).name %></h4>
+<h4>Patient: <%= Patient.find(params[:format].to_i).name %></h4>
 <h6>Enter Wound Location</h6>
 
 <%= form_for @wound, :class => 'form-horizontal' do |f| %>
