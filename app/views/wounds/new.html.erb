@@ -1,5 +1,5 @@
 <%= link_to "Home", root_path %> - <%= link_to "Back To All Wounds", patient_path(params[:format]) %>
-<h2>Enter Wound Information</h2>
+<h3>Enter Wound Information</h3>
 
 Patient: <%= User.find(params[:format].to_i).first_name %> <%= User.find(params[:format].to_i).last_name %>
 
