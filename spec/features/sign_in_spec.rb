@@ -2,14 +2,14 @@ require 'spec_helper'
 
 feature "Signing in" do
   background do
-    User.create!(:email => 'geovanni_haag@thiel.org', :password => 'password')
+    @user = FactoryGirl.create(:user)
   end
 
   scenario "Signing in with correct credentials" do
     visit '/sessions/create'
     within(".new_user") do
-      fill_in 'user[email]', :with => 'geovanni_haag@thiel.org'
-      fill_in 'user[password]', :with => 'password'
+      fill_in 'user[email]', :with => @user.email
+      fill_in 'user[password]', :with => @user.password
     end
     click_button 'Login'
     expect(page).to have_content 'Welcome back'
@@ -30,8 +30,8 @@ feature "Signing in" do
     scenario "Signing Out a user" do
       visit '/sessions/create'
       within(".new_user") do
-      fill_in 'user[email]', :with => 'geovanni_haag@thiel.org'
-      fill_in 'user[password]', :with => 'password'
+      fill_in 'user[email]', :with => @user.email
+      fill_in 'user[password]', :with => @user.password
     end
     click_button 'Login'
     click_link 'Logout'
