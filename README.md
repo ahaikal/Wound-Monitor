@@ -7,7 +7,7 @@ WoundAssist+ is a mobile hl7 logger and management tool for monitoring of pressu
 
 TEST COVERAGE
 ===
-[![Coverage Status](https://coveralls.io/repos/WoundTeam/woundmonitor/badge.png)](https://coveralls.io/r/WoundTeam/woundmonitor)
+[![Coverage Status](https://coveralls.io/repos/WoundTeam/woundmonitor/badge.png)](https://coveralls.io/r/WoundTeam/woundmonitor) [![Build Status](https://travis-ci.org/WoundTeam/woundmonitor.svg?branch=master)](https://travis-ci.org/WoundTeam/woundmonitor)
 
 
 TRAVIS LINK
