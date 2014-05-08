@@ -7,9 +7,19 @@
 
 <p>Patient: <%= @wound.patient.name %></p>
 
+
+
+<p>Area</p>
+
+
+
 <div class="row">
- <%= line_chart({20.day.ago => 2, 19.day.ago => 2, 18.day.ago => 3, 17.day.ago => 3, 16.day.ago => 3, 15.day.ago => 4, 14.day.ago => 4, 13.day.ago => 4, 12.day.ago => 4, 11.day.ago => 3, 10.day.ago => 3, 9.day.ago => 2, 8.day.ago => 2, 7.day.ago => 2, 6.day.ago => 1, 5.day.ago => 1, 4.day.ago => 1, 3.day.ago => 2, 2.day.ago => 1, 1.day.ago => 1}) %>
-</div>
+  <p class="wa-ctr-text">Wound area(length * width) over time.</p>
+   <%= line_chart @statuses.group_by_day(:observation_date).maximum("statuses.length * statuses.width")  %>
+   <p class="wa-ctr-text">Time</p>
+</div><br><br>
+
+
 
 <table class="table table-hover table-bordered">
   <thead>

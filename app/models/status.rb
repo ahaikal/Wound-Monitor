@@ -15,4 +15,9 @@ class Status < ActiveRecord::Base
   	:path => "app/public/system/images/:id/:style/:basename.:extension"
 
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+
+  def area
+    self.length * self.width
+  end
+
 end
