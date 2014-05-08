@@ -9,14 +9,11 @@
 
 
 
-<p>Area</p>
-
 
 
 <div class="row">
-  <p class="wa-ctr-text">Wound area(length * width) over time.</p>
-   <%= line_chart @statuses.group_by_day(:observation_date).maximum("statuses.length * statuses.width")  %>
-   <p class="wa-ctr-text">Time</p>
+  <p class="wa-ctr-text">Wound area<br><small>(length * width) / time</small></p>
+   <%= line_chart @statuses.group_by_day(:observation_date).maximum("statuses.length * statuses.width") %>
 </div><br><br>
 
 
