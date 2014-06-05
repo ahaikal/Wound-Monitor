@@ -1,7 +1,7 @@
 module Api
   module V1
     class PatientsController < ApplicationController
-   
+    
    
       respond_to :json
 
